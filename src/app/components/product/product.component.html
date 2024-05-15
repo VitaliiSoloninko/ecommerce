@@ -19,6 +19,13 @@
 
   <div *ngIf="details">
     <p>{{ product.description }}</p>
-    <p>Rate: {{ product.rating.rate }}</p>
+    <p>
+      Rate:
+      <span [ngStyle]="{ fontWeight: 'bold' }">
+        {{ product.rating.rate | number : "1.2-4" }}</span
+      >
+    </p>
+    // | number : "2.2-4" 2. - minimus for dot, .2-4 - 2 minimus after dot 4 -
+    maximum
   </div>
 </div>
