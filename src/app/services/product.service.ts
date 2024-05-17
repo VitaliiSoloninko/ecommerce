@@ -16,14 +16,14 @@ export class ProductService {
 
   getAll(): Observable<IProduct[]> {
     return this.http
-      .get<IProduct[]>('https://fakestoreapi.com/products', {
+      .get<IProduct[]>('https://fakestoreapi.com/products1', {
         params: new HttpParams({
           // fromString: 'limit=2',
           fromObject: { limit: 2 },
         }),
       })
       .pipe(delay(2000));
-    catchError(this.errorHandler);
+    catchError(this.errorHandler.bind(this));
   }
 
   private errorHandler(error: HttpErrorResponse) {
