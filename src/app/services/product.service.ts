@@ -1,13 +1,18 @@
-import { HttpClient, HttpParams } from '@angular/common/http';
+import {
+  HttpClient,
+  HttpErrorResponse,
+  HttpParams,
+} from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable, delay } from 'rxjs';
+import { Observable, catchError, delay, throwError } from 'rxjs';
 import { IProduct } from '../components/models/product';
+import { ErrorService } from './error.service';
 
 @Injectable({
   providedIn: 'root',
 })
 export class ProductService {
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, private errorService: ErrorService) {}
 
   getAll(): Observable<IProduct[]> {
     return this.http
@@ -18,5 +23,11 @@ export class ProductService {
         }),
       })
       .pipe(delay(2000));
+    catchError(this.errorHandler);
+  }
+
+  private errorHandler(error: HttpErrorResponse) {
+    this.errorService.handle(error.message);
+    return throwError(() => error.message);
   }
 }
