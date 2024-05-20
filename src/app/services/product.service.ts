@@ -22,8 +22,7 @@ export class ProductService {
           fromObject: { limit: 2 },
         }),
       })
-      .pipe(delay(2000));
-    catchError(this.errorHandler.bind(this));
+      .pipe(delay(2000), catchError(this.errorHandler.bind(this)));
   }
 
   private errorHandler(error: HttpErrorResponse) {
