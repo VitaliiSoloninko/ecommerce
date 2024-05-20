@@ -19,7 +19,7 @@ export class ProductService {
       .get<IProduct[]>('https://fakestoreapi.com/products', {
         params: new HttpParams({
           // fromString: 'limit=2',
-          fromObject: { limit: 2 },
+          fromObject: { limit: 10 },
         }),
       })
       .pipe(delay(200), retry(2), catchError(this.errorHandler.bind(this)));
