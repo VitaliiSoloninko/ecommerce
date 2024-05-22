@@ -12,9 +12,17 @@ import { GlobalErrorComponent } from './components/global-error/global-error.com
 import { ProductComponent } from './components/product/product.component';
 import { FilterProductsPipe } from './pipes/filter-products.pipe';
 import { ModalComponent } from './components/modal/modal.component';
+import { CreateProductComponent } from './components/create-product/create-product.component';
 
 @NgModule({
-  declarations: [AppComponent, ProductComponent, GlobalErrorComponent, FilterProductsPipe, ModalComponent],
+  declarations: [
+    AppComponent,
+    ProductComponent,
+    GlobalErrorComponent,
+    FilterProductsPipe,
+    ModalComponent,
+    CreateProductComponent,
+  ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule],
   providers: [provideClientHydration()],
   bootstrap: [AppComponent],
