@@ -1,8 +1,9 @@
-<form>
+<form (ngSubmit)="submit()">
   <input
     type="text"
     class="border w-full py-2 px-4 mb-2 rounded"
     placeholder="Product name"
+    formControlName="title"
   />
 
   <button type="submit" class="py-2 px-4 bg-blue-400 text-white rounded">
