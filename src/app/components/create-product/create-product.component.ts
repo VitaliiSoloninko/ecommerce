@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ModalService } from '../../services/modal.service';
 import { ProductService } from '../../services/product.service';
 
@@ -15,8 +15,16 @@ export class CreateProductComponent {
   ) {}
 
   form = new FormGroup({
-    title: new FormControl<string>(''),
+    title: new FormControl<string>('', [
+      Validators.required,
+      Validators.minLength(6),
+    ]),
   });
+
+  get title() {
+    return this.form.controls.title as FormControl;
+  }
+
   onSubmit() {
     console.log(this.form.value);
     this.productService
