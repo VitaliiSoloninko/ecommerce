@@ -38,7 +38,6 @@ export class ProductService {
       .pipe(
         tap((prod) => {
           this.products.push(prod);
-          console.log(this.products);
         })
       );
   }

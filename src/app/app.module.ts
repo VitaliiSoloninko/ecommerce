@@ -14,6 +14,8 @@ import { ModalComponent } from './components/modal/modal.component';
 import { ProductComponent } from './components/product/product.component';
 import { FilterProductsPipe } from './pipes/filter-products.pipe';
 import { FocusDirective } from './directives/focus.directive';
+import { ProductPageComponent } from './pages/product-page/product-page.component';
+import { AboutPageComponent } from './pages/about-page/about-page.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +26,8 @@ import { FocusDirective } from './directives/focus.directive';
     ModalComponent,
     CreateProductComponent,
     FocusDirective,
+    ProductPageComponent,
+    AboutPageComponent,
   ],
   imports: [
     BrowserModule,
