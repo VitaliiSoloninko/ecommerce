@@ -13,6 +13,7 @@ import { GlobalErrorComponent } from './components/global-error/global-error.com
 import { ModalComponent } from './components/modal/modal.component';
 import { ProductComponent } from './components/product/product.component';
 import { FilterProductsPipe } from './pipes/filter-products.pipe';
+import { FocusDirective } from './directives/focus.directive';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { FilterProductsPipe } from './pipes/filter-products.pipe';
     FilterProductsPipe,
     ModalComponent,
     CreateProductComponent,
+    FocusDirective,
   ],
   imports: [
     BrowserModule,

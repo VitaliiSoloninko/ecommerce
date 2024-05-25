@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductService } from './services/product.service';
+import { ModalService } from './services/modal.service';
 
 @Component({
   selector: 'app-root',
@@ -13,7 +14,10 @@ export class AppComponent implements OnInit {
   // products$: Observable<IProduct[]>;
   term = '';
 
-  constructor(public productService: ProductService) {}
+  constructor(
+    public productService: ProductService,
+    public modalService: ModalService
+  ) {}
 
   ngOnInit(): void {
     this.loading = true;
