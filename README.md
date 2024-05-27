@@ -1,3 +1,25 @@
+## 2 page site shop products
+
+Technologies:
+
+- Angular
+- Tailwind
+
+Features:
+
+- Work with JSON
+- Dynamic show/hide product details
+- Indicator loading on the page
+- Work with stream
+- Error handling
+- Filtration
+- Work with modal windows
+- Create new product
+- Work with Reactive Forms, validation
+- Auto focus
+- Add the product to the page
+- Navigation
+
 # Ecommerce
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.6.
